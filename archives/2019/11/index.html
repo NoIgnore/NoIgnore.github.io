@@ -224,16 +224,23 @@
     </div>
 
      <div calss="count-span">
-         <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+  {%- if theme.busuanzi_count.total_visitors %}
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-{{ theme.busuanzi_count.total_visitors_icon }}"></i>
       </span>
       <span class="site-uv" title="{{ __('footer.total_visitors') }}">
-        Total people：<span id="busuanzi_value_site_uv"></span>
+        People：<span id="busuanzi_value_site_uv"></span>
       </span>
     </span>
-        <span class="post-meta-divider">|</span>
-         <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+  {%- endif %}
+
+  {%- if theme.busuanzi_count.total_visitors and theme.busuanzi_count.total_views %}
+    <span class="post-meta-divider">|</span>
+  {%- endif %}
+
+  {%- if theme.busuanzi_count.total_views %}
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-{{ theme.busuanzi_count.total_views_icon }}"></i>
       </span>
@@ -241,6 +248,7 @@
         Viewed：<span id="busuanzi_value_site_pv"></span>
       </span>
     </span>
+  {%- endif %}
    </div>
 
   </div>
