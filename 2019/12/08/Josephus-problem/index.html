@@ -6,17 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Algorithm &amp; DataStruct (Reproduced) | Blog From Kevin</title>
+  <title>Josephus problem | Blog From Kevin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="AlgorithmReprinted to Algorithm.md  DataStructReprinted to DataStruct.md">
-<meta name="keywords" content="Algorithm,DataStruct">
+  <meta name="description" content="Josephus problem 简介： 据说著名犹太历史学家 Josephus有过以下的故事：在罗马人占领乔塔帕特后，39 个犹太人与Josephus及他的朋友躲到一个洞中，39个犹太人决定宁愿死也不要被敌人抓到，于是决定了一个自杀方式，41个人排成一个圆圈，由第1个人开始报数，每报数到第3人该人就必须自杀，然后再由下一个重新报数，直到所有人都自杀身亡为止。然而Josephus 和他的朋友并不想">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Algorithm &amp; DataStruct (Reproduced)">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;03&#x2F;Algorithm&amp;Datatstruct&#x2F;index.html">
+<meta property="og:title" content="Josephus problem">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;08&#x2F;Josephus-problem&#x2F;index.html">
 <meta property="og:site_name" content="Blog From Kevin">
-<meta property="og:description" content="AlgorithmReprinted to Algorithm.md  DataStructReprinted to DataStruct.md">
+<meta property="og:description" content="Josephus problem 简介： 据说著名犹太历史学家 Josephus有过以下的故事：在罗马人占领乔塔帕特后，39 个犹太人与Josephus及他的朋友躲到一个洞中，39个犹太人决定宁愿死也不要被敌人抓到，于是决定了一个自杀方式，41个人排成一个圆圈，由第1个人开始报数，每报数到第3人该人就必须自杀，然后再由下一个重新报数，直到所有人都自杀身亡为止。然而Josephus 和他的朋友并不想">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-03T12:18:09.032Z">
+<meta property="og:updated_time" content="2019-12-08T03:17:29.685Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Blog From Kevin" type="application/atom+xml">
@@ -141,29 +140,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Algorithm&amp;Datatstruct" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Josephus-problem" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Algorithm &amp; DataStruct (Reproduced)
+      Josephus problem
     </h1>
   
 
         
-        <a href="/2019/12/03/Algorithm&Datatstruct/" class="archive-article-date">
-  	<time datetime="2019-12-03T11:51:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-03</time>
+        <a href="/2019/12/08/Josephus-problem/" class="archive-article-date">
+  	<time datetime="2019-12-08T02:54:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><p><strong>Reprinted to <a href="https://github.com/InterviewMap/CS-Interview-Knowledge-Map/blob/master/Algorithm/algorithm-ch.md" target="_blank" rel="noopener">Algorithm.md</a></strong></p>
-<hr>
-<h1 id="DataStruct"><a href="#DataStruct" class="headerlink" title="DataStruct"></a>DataStruct</h1><p><strong>Reprinted to <a href="https://github.com/InterviewMap/CS-Interview-Knowledge-Map/blob/master/DataStruct/dataStruct-zh.md" target="_blank" rel="noopener">DataStruct.md</a></strong></p>
+        <h1 id="Josephus-problem"><a href="#Josephus-problem" class="headerlink" title="Josephus problem"></a>Josephus problem</h1><ul>
+<li>简介：<ul>
+<li><strong>据说著名犹太历史学家 Josephus有过以下的故事：在罗马人占领乔塔帕特后，39 个犹太人与Josephus及他的朋友躲到一个洞中，39个犹太人决定宁愿死也不要被敌人抓到，于是决定了一个自杀方式，41个人排成一个圆圈，由第1个人开始报数，每报数到第3人该人就必须自杀，然后再由下一个重新报数，直到所有人都自杀身亡为止。然而Josephus 和他的朋友并不想遵从。首先从一个人开始，越过k-2个人（因为第一个人已经被越过），并杀掉第k个人。接着，再越过k-1个人，并杀掉第k个人。这个过程沿着圆圈一直进行，直到最终只剩下一个人留下，这个人就可以继续活着。问题是，给定了和，一开始要站在什么地方才能避免被处决？Josephus要他的朋友先假装遵从，他将朋友与自己安排在第16个与第31个位置，于是逃过了这场死亡游戏。</strong><a id="more"></a></li>
+</ul>
+</li>
+<li>实现：<ul>
+<li><strong>先定义一个循环链表的结构体</strong><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">struct</span> <span class="title">mystructure</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="class"> &#123;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> id = <span class="number">0</span>;<span class="comment">//添加id的属性</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> live = <span class="number">1</span>;<span class="comment">//生命值为1代表生存</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">mystructure* next = <span class="literal">nullptr</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"> &#125;;</span></pre></td></tr></table></figure></li>
+<li><strong>定义头尾指针并生成一个指定格数为p的循环链表</strong><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">   mystructure* head = <span class="keyword">new</span> mystructure;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">mystructure* tail = <span class="keyword">new</span> mystructure;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">head-&gt;id = <span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">head-&gt;next = tail;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">tail-&gt;id = <span class="number">2</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>; i &lt;= p; i++) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	mystructure* xin = <span class="keyword">new</span> mystructure;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">	xin-&gt;id = i;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">	tail-&gt;next = xin;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">	tail = xin;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">tail-&gt;next = head;<span class="comment">//最后的尾指针指向头，形成循环</span></span></pre></td></tr></table></figure>
+<ul>
+<li><strong>生成一个用于循环的指针使其等于头节点</strong><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">   mystructure* newpoint = <span class="keyword">new</span> mystructure;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">newpoint = head;<span class="comment">//从头结点开始遍历循环</span></span></pre></td></tr></table></figure></li>
+<li><strong>定义遍历的结束位置</strong><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">   <span class="keyword">int</span> i = <span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> j = <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> the_middle = (p / <span class="number">2</span>) * c;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> the_end = p * c;</span></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
       
 
@@ -193,21 +205,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Algorithm</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">DataStruct</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -258,7 +255,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/03/Algorithm&Datatstruct/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/08/Josephus-problem/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -272,18 +269,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/08/Josephus-problem/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Josephus problem
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/30/My-new-first-blog/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">My First New Blog</div>
+    <a href="/2019/12/03/Algorithm&Datatstruct/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Algorithm &amp; DataStruct (Reproduced)</div>
       <i class="icon-circle-right"></i>
     </a>
   
