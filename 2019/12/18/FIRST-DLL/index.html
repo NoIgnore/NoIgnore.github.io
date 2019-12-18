@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Lucid Dreams">
 <meta property="og:description" content="g++写dll1.my_dll.h：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-18T06:10:16.771Z">
+<meta property="og:updated_time" content="2019-12-18T10:11:47.143Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Lucid Dreams" type="application/atom+xml">
@@ -178,8 +178,8 @@
 <p><strong>2.将mydll.lib , mydll.dll , mydll.exp , mydll.pdb复制到main.cpp当前目录</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">MINGW64 ~/Desktop/test2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">main.cpp  mydll.dll*  mydll.exp  mydll.lib  mydll.pdb</span></pre></td></tr></table></figure>
 
-<p><strong>3.编译执行：</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">MINGW64 ~/Desktop/test2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> g++ main.cpp -lmydll -L.</span></span></pre></td></tr></table></figure>
+<p><strong>3.编译执行：(-L./=-L.都是当前目录)</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">MINGW64 ~/Desktop/test2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> g++ main.cpp -lmydll -L./</span></span></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">MINGW64 ~/Desktop/test2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">a.exe*  main.cpp  mydll.dll*  mydll.exp  mydll.lib  mydll.pdb</span></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">MINGW64 ~/Desktop/test2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./a.exe</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">go</span></pre></td></tr></table></figure>
       
