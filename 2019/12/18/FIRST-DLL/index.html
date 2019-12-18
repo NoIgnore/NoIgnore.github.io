@@ -6,16 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>MFC PROJECT(2) | Lucid Dreams</title>
+  <title>FIRST_DLL | Lucid Dreams</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="代码做了改进，离插件化近了一丁点 这次把鼠标判断事件加到triangle类里了，在VIEWCPP里每次只需要判断是否layer_click&#x3D;&#x3D;0即可，当然默认的都是零，但如果遇到多边形的时候layer_click&#x3D;1，这时只需要在子类的鼠标事件里进行更改到0的操作时才返回主文件的鼠标事件就行了  triangle类里：">
+  <meta name="description" content="1.my_dll.h： 1#pragma once2&#x2F;&#x2F; #ifdef MY_DLL_EXPORTS&#x2F;&#x2F;vs下3&#x2F;&#x2F; #   define MY_DLL_EXP __declspec(dllexport)4&#x2F;&#x2F; #else5&#x2F;&#x2F; #   define MY_DLL_EXP __declspec(dllimport)6&#x2F;&#x2F; #endif78#ifdef __cplusplus9extern &quot;C&quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MFC PROJECT(2)">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;17&#x2F;MFC-PROJECT-2&#x2F;index.html">
+<meta property="og:title" content="FIRST_DLL">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;18&#x2F;FIRST-DLL&#x2F;index.html">
 <meta property="og:site_name" content="Lucid Dreams">
-<meta property="og:description" content="代码做了改进，离插件化近了一丁点 这次把鼠标判断事件加到triangle类里了，在VIEWCPP里每次只需要判断是否layer_click&#x3D;&#x3D;0即可，当然默认的都是零，但如果遇到多边形的时候layer_click&#x3D;1，这时只需要在子类的鼠标事件里进行更改到0的操作时才返回主文件的鼠标事件就行了  triangle类里：">
+<meta property="og:description" content="1.my_dll.h： 1#pragma once2&#x2F;&#x2F; #ifdef MY_DLL_EXPORTS&#x2F;&#x2F;vs下3&#x2F;&#x2F; #   define MY_DLL_EXP __declspec(dllexport)4&#x2F;&#x2F; #else5&#x2F;&#x2F; #   define MY_DLL_EXP __declspec(dllimport)6&#x2F;&#x2F; #endif78#ifdef __cplusplus9extern &quot;C&quot;">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-17T15:37:04.408Z">
+<meta property="og:updated_time" content="2019-12-18T05:32:54.632Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Lucid Dreams" type="application/atom+xml">
@@ -140,39 +140,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-MFC-PROJECT-2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-FIRST-DLL" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      MFC PROJECT(2)
+      FIRST_DLL
     </h1>
   
 
         
-        <a href="/2019/12/17/MFC-PROJECT-2/" class="archive-article-date">
-  	<time datetime="2019-12-17T15:21:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
+        <a href="/2019/12/18/FIRST-DLL/" class="archive-article-date">
+  	<time datetime="2019-12-18T05:24:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="代码做了改进，离插件化近了一丁点"><a href="#代码做了改进，离插件化近了一丁点" class="headerlink" title="代码做了改进，离插件化近了一丁点"></a>代码做了改进，离插件化近了一丁点</h3><hr>
-<p>这次把鼠标判断事件加到triangle类里了，在VIEWCPP里每次只需要判断是否layer_click==0即可，当然默认的都是零，但如果遇到多边形的时候layer_click=1，这时只需要在子类的鼠标事件里进行更改到0的操作时才返回主文件的鼠标事件就行了</p>
-<ul>
-<li>triangle类里：<a id="more"></a><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (layer_click == <span class="number">1</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">	from_layer_startpoint = <span class="built_in">point</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">	layer_click = <span class="number">2</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (layer_click == <span class="number">2</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	from_layer_middlepoint = <span class="built_in">point</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">	layer_click = <span class="number">3</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (layer_click == <span class="number">3</span>) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">	from_layer_endpoint = <span class="built_in">point</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">	layer_click = <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h4 id="不足之处："><a href="#不足之处：" class="headerlink" title="不足之处："></a>不足之处：</h4><ul>
-<li>没做到完全插件化叭</li>
-<li>然后如果是多边形的话，读取文件时要在文档的CPP进行点的数据的改动</li>
-<li>三角最后一个buttondown消息将layer_click置零后，还要在VIEW里更新DOC指针的middlepoint</li>
-</ul>
-
+        <p><strong>1.my_dll.h：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// #ifdef MY_DLL_EXPORTS//vs下</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// #   define MY_DLL_EXP __declspec(dllexport)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// #else</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// #   define MY_DLL_EXP __declspec(dllimport)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// #endif</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WHYCAN_T</span> &#123;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span></span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span></pre></td></tr></table></figure>
+<p><strong>2.my_dll.cpp：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">"my_dll.h"</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> WHYCAN_T::hello()</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello,this is my dll ^_^"</span> &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<p><strong>3.resource.cpp:</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"my_dll.h"</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	WHYCAN_T helloDll;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">	helloDll.hello();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<p><strong>4.MINGW:</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">MINGW64 ~/Desktop/TEST_DLL</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ ls</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">my_dll.cpp  my_dll.h  resource.cpp</span></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">MINGW64 ~/Desktop/TEST_DLL</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ g++ --share my_dll.cpp -o my_dll.dll</span></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">MINGW64 ~/Desktop/TEST_DLL</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ g++ resource.cpp my_dll.dll -o 111.exe</span></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">MINGW64 ~/Desktop/TEST_DLL</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ ./111.exe</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Hello,this is my dll ^_^</span></pre></td></tr></table></figure>
       
 
       
@@ -251,7 +249,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/17/MFC-PROJECT-2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/18/FIRST-DLL/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -265,18 +263,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/18/FIRST-DLL/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          FIRST_DLL
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/16/My-mfc-project/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">My_mfc_project</div>
+    <a href="/2019/12/17/MFC-PROJECT-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MFC PROJECT(2)</div>
       <i class="icon-circle-right"></i>
     </a>
   
