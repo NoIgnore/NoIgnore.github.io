@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Lucid Dreams">
 <meta property="og:description" content="The first three chapters 修改口令passwd命令">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-28T07:55:29.779Z">
+<meta property="og:updated_time" content="2020-05-08T02:24:56.208Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Lucid Dreams" type="application/atom+xml">
@@ -192,6 +192,14 @@
 <li>文本修改<br>  vi处于命令模式时,可以替换(覆盖)字符,或者删除字符、一行或者数行。也可以利用undo命令修改错误。正如undo的含义,undo命令放弃用户最近的一次操作。这些文本修改命令仅适用于vi 的命令模式,而且大部分命令不会改变vi的工作模式。<br>  vi键功能<br>  x<br>  从指定位置开始删除字符<br>  dd<br>  从指定位置删除行<br>  u<br>  放弃最近的修改<br>  U<br>  放弃对当前行做的所有修改<br>  r<br>  替换当前光标所在的字符<br>  R<br>  从当前光标的位量开始替换字符,并且使vi进人文本输人模式<br>  .<br>  重复上次的修改</li>
 </ul>
 </li>
+<li><strong>目录详述</strong><ul>
+<li>目录是UNX文件系统的基本特征。目录系统提供了磁盘组织文件的结构。为了形象描述磁盘和它的目录结构,可以把磁盘想像成文件柜。文件柜可能有几个抽屉,可以用来比作目录。每个抽屉可能分成几部分,与子目录类似。UNIX中,目录结构是分层组织。这种结构允许用户方便地组织和查找文件。最高层目录称作根目录(root),所有其他目录是它的直接或者间接分支。目录不包含所含文件的信息,而是提供-个索引路径,允许用户组织和查找文件。</li>
+</ul>
+</li>
+<li><strong>目录列表：ls命令</strong><ul>
+<li>-a        列出所有文件,包括隐藏文件<br>-C        以多列的格式列表,按列排序<br>-F        如果是目录,文件名后加斜杠(/);如果是可执行文件.加星号( # )表示<br>-l        按照长格式列表,显示文件的详细信息<br>-m        按页宽列文件,以逗号分隔<br>-p        如果是目录,文件名后加斜杠(/)<br>-r        以字母反序列表.<br>-R        循环列出子目录的内容<br>-s        以文件块为单位显示文件大小<br>-x        以多列的格式列表,按行排序<br>[说明]</li>
+</ul>
+  1.每个选项字母前需要加连字符。<br>  2.命令名和选项之间必须要有空格。.<br>  3.加目录的路径名列出其他目录的文件。<br>  4.一行命令中可以多于一个选项。</li>
 </ul>
 
       
