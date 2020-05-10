@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Lucid Dreams">
 <meta property="og:description" content="The first three chapters 修改口令passwd命令">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-10T02:39:07.895Z">
+<meta property="og:updated_time" content="2020-05-10T02:41:32.463Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Lucid Dreams" type="application/atom+xml">
@@ -200,14 +200,7 @@
 <li>-a        列出所有文件,包括隐藏文件<br>-C        以多列的格式列表,按列排序<br>-F        如果是目录,文件名后加斜杠(/);如果是可执行文件.加星号( # )表示<br>-l        按照长格式列表,显示文件的详细信息<br>-m        按页宽列文件,以逗号分隔<br>-p        如果是目录,文件名后加斜杠(/)<br>-r        以字母反序列表.<br>-R        循环列出子目录的内容<br>-s        以文件块为单位显示文件大小<br>-x        以多列的格式列表,按行排序<br>说明:<br>  1.每个选项字母前需要加连字符。<br>  2.命令名和选项之间必须要有空格。.<br>  3.加目录的路径名列出其他目录的文件。<br>  4.一行命令中可以多于一个选项。</li>
 </ul>
 </li>
-<li><strong>删除文件</strong><ul>
-<li><pre><code class="shell"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span> [<span class="built_in">return</span>]</span>
-<span class="meta">$</span><span class="bash">rm -r * [<span class="built_in">return</span>](如果用-i选项会得到确认提示符)</span>
-<span class="meta">$</span><span class="bash">ls [<span class="built_in">return</span>]</span>
-<span class="meta">$</span><span class="bash">(该目录下什么东西都没了)</span></code></pre>
-</li>
-</ul>
-</li>
+<li><strong>删除文件</strong>  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span> [<span class="built_in">return</span>]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">rm -r * [<span class="built_in">return</span>](如果用-i选项会得到确认提示符)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ls [<span class="built_in">return</span>]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">(该目录下什么东西都没了)</span></span></pre></td></tr></table></figure></li>
 <li><strong>vi编辑</strong><ul>
 <li>键入vi myfirst然后按回车键,调用vi编辑器并myfirst的内容调入到临时缓冲区内。<br>键入:w yourfirst然后按回车键,将当前临时缓冲区的内容(myfirst)写入文件yourfirst中。</li>
 <li>键入vi myfrst然后按回车键,调用vi编辑器编辑文件myfirst。<br>键入:r yourfirst然后按回车键将youfirst的内容加入到当前编辑的文件中。vi 显示导入文件的名字和长度: “yourfirst” 10 lines,212characters</li>
