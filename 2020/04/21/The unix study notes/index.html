@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Lucid Dreams">
 <meta property="og:description" content="The first three chapters 修改口令passwd命令">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-10T02:41:32.463Z">
+<meta property="og:updated_time" content="2020-05-26T09:11:55.710Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Lucid Dreams" type="application/atom+xml">
@@ -173,6 +173,7 @@
 </ul>
 </li>
 </ul>
+<hr>
 <h1 id="Chapter-456"><a href="#Chapter-456" class="headerlink" title="Chapter 456"></a>Chapter 456</h1><ul>
 <li><strong>vi工作模式</strong><ul>
 <li>vi有两种基本工作模式:命令模式和文本输入模式。一些命令适用于命令工作模式,而另一些命令只适用于文本输入模式。在vi使用中,用户可以在两种工作模式间切换。命令模式:vi初始启动时先进入命令模式。在命令模式下，键的输入不会在屏幕上显示，只会被解释执行。在命令模式下,用户可以利用一些 预先定义的按键来移动光标查找某个字删除几行、粘贴文字等。一些命令以冒号:和斜杠/或者问号?开头。用户输入的命令均显示在编辑器屏幕的最后一行。在输入命令的行尾,按回车键,vi执行命令。文本输入模式:在文本输入模式下,键盘就成了用户的打字机。vi 会按序显示用户的输入。按键不是被解释为命令执行,而只是作为文本写入到用户的文件中。状态行:屏幕底部一行,通常是24行,被vi编辑器用来反馈编辑操作结果。错误消息或者提供信息的消息会在状态行中显示出来。vi 还会在24行显示那些以冒号(:)或问号(?)开头的命令。</li>
@@ -208,10 +209,16 @@
 <li>写入另一个文件:vi编辑器允许用户将当前编辑文件的一部分写(保存)到另一个文件中。<br>用户只需指定要写的行的范围,使用:w命令完成写操作。例如，如果想把第5行到第100行之间的文本写到文件lemp中,只需键入:5, 100 w temp,然后按回车键即可。vi 将把第5到第100行存入文件temp中,并显示与如下相似的信息:”temp” [new file] 96 lines, 670 characters<br>如果要写的文件已经存在，则vi显示错误信息。用户可以另行指定一个新文件或使用:w!命令覆盖已有文件。</li>
 <li>键入dd,vi删除当前行,并将删除的行保存在临时缓冲区中,然后光标移到U上。<br>键入p,vi将前面删除的行放置在当前行下面。</li>
 <li>使用yank和put操作符,可以将文件的一部分文本从一个位置复制到另一个位置。<br>键入yy, vi将当前行复制到临时缓冲区中。<br>使用光标移动键,将光标移至第一行。<br>键入p,vi将临时缓冲区的内容复制到当前行的下面。<br>使用光标移动键将光标移至最后一行。<br>键入P,vi将临时缓冲区的内容复制到当前行的上面。</li>
+<li>退出vi的命令<br>除了ZZ命令外,其他的命令都以:开头,以[Retum]结尾。<br>键  功能<br>wq  保存文件,退出vi<br>w   保存文件,但不退出vi<br>q   退出编辑器<br>q!  退出编辑器,同时放弃所作的修改<br>ZZ  保存文件,退出vi</li>
 </ul>
 </li>
+<li><strong>路径和路径名</strong><br>  $\color{red}{绝对路径名}$:绝对路径名(完全路径名)是从根开始定位一个文件。绝对路径名总是以根目录名(/)开始。例如，如果工作目录是usr,david目录下myfirst文件的绝对路径名是/usr/david/myfirst.<br>  $\color{red}{相对路径名}$:相对路径名是路径名的一种更短的形式。它从工作目录开始定位一个文件。<br>  与绝对路径名类似,相对路径名也可以描述经过多个目录的路径。例如,如果工作目录在usr,david目录下的文件REPORT的相对路径名是david/。</li>
+<li><strong>删除文件</strong><br>  $\color{red}{rm命令选项}$：<br>  -r:删除指定的目录及目录中的所有文件和子目录<br>  -i:删除文件前，请求确认  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span>[<span class="built_in">return</span>]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">rm -r * [<span class="built_in">return</span>]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ls [<span class="built_in">return</span>]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">_(there is nothing <span class="keyword">in</span> this dir)</span></span></pre></td></tr></table></figure></li>
+<li><strong>vi编辑器的高级使用</strong></li>
 </ul>
-
+<hr>
+<h1 id="Chapter-789"><a href="#Chapter-789" class="headerlink" title="Chapter 789"></a>Chapter 789</h1><hr>
+<h1 id="Chapter-10-11-12-13"><a href="#Chapter-10-11-12-13" class="headerlink" title="Chapter 10-11-12-13"></a>Chapter 10-11-12-13</h1>
       
 
       
