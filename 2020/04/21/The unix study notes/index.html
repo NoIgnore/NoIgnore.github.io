@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Lucid Dreams">
 <meta property="og:description" content="The first three chapters 修改口令passwd命令">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-27T02:55:46.076Z">
+<meta property="og:updated_time" content="2020-05-27T03:04:50.168Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Lucid Dreams" type="application/atom+xml">
@@ -217,17 +217,17 @@
 <li><strong>vi编辑器的高级使用</strong><ul>
 <li><font color=red>编辑多文档</font>：<br>键入vi file1 file2<br>键入w 然后按回车键，保存file1<br>键入ar 然后按回车键，显示打开的文件名，并将正在编辑的文件用括号括起来：[file1] file2<br>键入n并按回车键，开始编辑file2，vi响应：</li>
 </ul>
-  <strong>*”file2” 100 lines，700 characters*</strong><ul>
+  <strong>“file2” 100 lines，700 characters</strong><ul>
 <li><font color=red>编辑另一个文件</font>：<br>键入vi然后按回车键,调用vi编辑器而不指定任何文件名。<br>键入:e myfirst然后按回车键,调用文件myfirst。用户当前编辑的文件是myfirst;vi将显示myfirst的文件名和长度:</li>
 </ul>
-  <strong>*”myfirst” 3 lines, 106 characters*</strong><ul>
+  <strong>“myfirst” 3 lines, 106 characters</strong><ul>
 <li><font color=red>读取另一个文件</font>:<br>vi允许用户将另一个文件导入到用户当前编辑的文件中。在vi编辑器命令状态下,键入:r后跟文件名,然后按回车键。<br>:r命令将指定文件的副本放到缓冲区中用户光标后面的位置。指定文件成为用户正在编辑文件的一部分。</li>
 <li><font color=red>读取另一个文件到当前工作缓存区</font>:<br>键入 vi myfirst 然后按回车键，调用vi编辑器编辑文件myfirst.<br>键入：r yourfirst 然后按回车键，将yourfirst的内容加入到当前编辑的文件中。vi显示导入文件的名字和长度：</li>
 </ul>
-  <strong>*”yourfirst” 10 lines , 212 characters*</strong><ul>
-<li><font color=red>运行shell命令</font>:<br>用户可以在vi命令行运行UNIX shell命令。这- -方便的特性使用户可以临时抛开vi来运行shell命令。! (叹号)通知vi后面是一个shell命令。例如,要在vi编辑器中运行date命令，<br>键入:!date然后按回车键。vi编辑器将清除屏幕,执行date命令,读者可以看到类似如下的<br>屏幕显示:<br>  ***Wed May 27 10:47:13 EDT 2020<pre><code>[Hit any key to continue]***</code></pre>按任意一个键即可返回vi编辑器,并可在前面离开的地方继续编辑。如果用户希望,也可以将shell命令的结果读进来并加到用户文本中。使用:r(读取)命令,后面紧跟!和相应的shell命令来将命令的结果结合进用户正在编辑的文本中。<br>[实例]<br>要读取系统的时间和日期,键入:r ! date然后按回车键;vi响应将当前系统日期和时间放在当前行下面。<br>vi编辑器保持在文本输入模式。</li>
+  <strong>“yourfirst” 10 lines , 212 characters</strong><ul>
+<li><font color=red>运行shell命令</font>:<br>用户可以在vi命令行运行UNIX shell命令。这- -方便的特性使用户可以临时抛开vi来运行shell命令。! (叹号)通知vi后面是一个shell命令。例如,要在vi编辑器中运行date命令，<br>键入:!date然后按回车键。vi编辑器将清除屏幕,执行date命令,读者可以看到类似如下的<br>屏幕显示:<br>  <strong>Wed May 27 10:47:13 EDT 2020<br>  [Hit any key to continue]</strong><br>按任意一个键即可返回vi编辑器,并可在前面离开的地方继续编辑。如果用户希望,也可以将shell命令的结果读进来并加到用户文本中。使用:r(读取)命令,后面紧跟!和相应的shell命令来将命令的结果结合进用户正在编辑的文本中。</li>
 </ul>
-  <strong><em>The vi history<br>  The vi editor is a text editor which is supported by most of the<br>  UNIX operating systens.<br>  The vi history<br>  The vi editor is a text editor which is supported by most of the<br>  <font color=red>Sat Nov 29 14:00:52 EDT 1993</font><br>  UNIX operat ing systems.</em></strong><br>  <strong><em>[实例]</em></strong><br>  <strong>如下命令显示!的使用。<br>  键入:! ls然后按回车键,列出当前目录中的文件。<br>  键入:! who然后按回车键,显示谁当前登录到系统上。<br>  键入:! date然后按回车键,显示当前日期和系统时间。<br>  键入:! pwd然后按回车键,显示当前工作目录路径。<br>  键入:r ! date然后按回车键,读取date命令的结果,并将其放置在正在编辑文本的光标后面。</strong></li>
+  <strong><em>[实例]</em></strong><br>  要读取系统的时间和日期,键入:r ! date然后按回车键;vi响应将当前系统日期和时间放在当前行下面。<br>  vi编辑器保持在文本输入模式。<br>  <strong><em>The vi history<br>  The vi editor is a text editor which is supported by most of the<br>  UNIX operating systens.<br>  The vi history<br>  The vi editor is a text editor which is supported by most of the<br>  <font color=red>Sat Nov 29 14:00:52 EDT 1993</font><br>  UNIX operat ing systems.</em></strong><br>  <strong><em>[实例]</em></strong><br>  <strong>如下命令显示!的使用。<br>  键入:! ls然后按回车键,列出当前目录中的文件。<br>  键入:! who然后按回车键,显示谁当前登录到系统上。<br>  键入:! date然后按回车键,显示当前日期和系统时间。<br>  键入:! pwd然后按回车键,显示当前工作目录路径。<br>  键入:r ! date然后按回车键,读取date命令的结果,并将其放置在正在编辑文本的光标后面。</strong></li>
 </ul>
 <hr>
 <h1 id="Chapter-789"><a href="#Chapter-789" class="headerlink" title="Chapter 789"></a>Chapter 789</h1><hr>
