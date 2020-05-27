@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Lucid Dreams">
 <meta property="og:description" content="The first three chapters 修改口令passwd命令">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-26T09:11:55.710Z">
+<meta property="og:updated_time" content="2020-05-27T01:57:44.358Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Lucid Dreams" type="application/atom+xml">
@@ -214,7 +214,10 @@
 </li>
 <li><strong>路径和路径名</strong><br>  $\color{red}{绝对路径名}$:绝对路径名(完全路径名)是从根开始定位一个文件。绝对路径名总是以根目录名(/)开始。例如，如果工作目录是usr,david目录下myfirst文件的绝对路径名是/usr/david/myfirst.<br>  $\color{red}{相对路径名}$:相对路径名是路径名的一种更短的形式。它从工作目录开始定位一个文件。<br>  与绝对路径名类似,相对路径名也可以描述经过多个目录的路径。例如,如果工作目录在usr,david目录下的文件REPORT的相对路径名是david/。</li>
 <li><strong>删除文件</strong><br>  $\color{red}{rm命令选项}$：<br>  -r:删除指定的目录及目录中的所有文件和子目录<br>  -i:删除文件前，请求确认  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span>[<span class="built_in">return</span>]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">rm -r * [<span class="built_in">return</span>]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ls [<span class="built_in">return</span>]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">_(there is nothing <span class="keyword">in</span> this dir)</span></span></pre></td></tr></table></figure></li>
-<li><strong>vi编辑器的高级使用</strong></li>
+<li><strong>vi编辑器的高级使用</strong><ul>
+<li><font color=red>编辑多文档</font>：<br>键入vi file1 file2<br>键入w 然后按回车键，保存file1<br>键入ar 然后按回车键，显示打开的文件名，并将正在编辑的文件用括号括起来：[file1] file2<br>键入n并按回车键，开始编辑file2，vi响应：“file2” 100 lines，700 characters</li>
+</ul>
+</li>
 </ul>
 <hr>
 <h1 id="Chapter-789"><a href="#Chapter-789" class="headerlink" title="Chapter 789"></a>Chapter 789</h1><hr>
