@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Lucid Dreams">
 <meta property="og:description" content="The first three chapters 修改口令passwd命令">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-27T03:18:22.859Z">
+<meta property="og:updated_time" content="2020-05-30T01:15:56.735Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Lucid Dreams" type="application/atom+xml">
@@ -225,7 +225,14 @@
 </li>
 </ul>
 <hr>
-<h1 id="Chapter-789"><a href="#Chapter-789" class="headerlink" title="Chapter 789"></a>Chapter 789</h1><hr>
+<h1 id="Chapter-789"><a href="#Chapter-789" class="headerlink" title="Chapter 789"></a>Chapter 789</h1><ul>
+<li><strong>UNIX文件系统（续）</strong><ul>
+<li><strong>shell重定向</strong><br>  shel提供的最有用的功能之一是“shell 重定向操作符”。许多UNIX命令从标准输入设备得到输入并把输出发送到标准输出设备。这是通常的默认设置。利用shell重定向操作符,用户可以更改从何处得到输入以及把输出发送到哪里的命令。命令的标准(默认)输入/输出设备是用户终端。<br>  shell重定向操作符允许做下面的事情:<br>  ●把进程的输出保存到文件中<br>  ●用文件作为进程的输入<br>  [说明]<br>  1.进程是任何可执行的程序，可以是shell命令、应用程序或者用户编写的程序。<br>  2.重定向操作符是针对shell 的指令,并不是命令语法的一部分。因此,它们可以出现在命令行的任何地方。<br>  3.重定向是暂时的,只对使用它的命令有效。</li>
+<li><strong>输出重定向</strong><br>  输出重定向允许用户杷进程的输出保存在文件中。然后,用户就可以对此进行编辑、打印<br>  或者用它作为其他进程的输人。<br>  格式如下:<strong>comiand &gt; filename</strong><br>  或者:<strong>command &gt;&gt; filename</strong><br>  例如,为了列出当前工作目录的文件名,使用bs命令。输人b然后按回车键。shell 默认<br>  输出设备是用户终端胖幕(标准输出设备),因此，用户能看到屏幕上的文件列表。假设用户想<br>  要把ls命令的输出(该目录的文件列表)保存到文件中,可把s命令的输出从屏幕重定向到文<br>  件,第一种方法如下:<strong>ls &gt; mydir.list</strong><br>  这里,ls的输出并没有被发送到终端屏幕,而是保存到名为myair.list的文件中了。如果<br>  打开mydir.list文件,可以看到文件列表。<br>  <font color=red>[说明]</font><br>  <strong>1.如果指定的文件名已经存在,那么就会进行写覆盖,原有文件的内容丢失<br>  2.如果指定的文件名不存在, shell创建一个文件。</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
 <h1 id="Chapter-10-11-12-13"><a href="#Chapter-10-11-12-13" class="headerlink" title="Chapter 10-11-12-13"></a>Chapter 10-11-12-13</h1>
       
 
