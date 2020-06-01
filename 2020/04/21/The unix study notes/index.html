@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Lucid Dreams">
 <meta property="og:description" content="The first three chapters 修改口令passwd命令">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-05-31T07:57:16.013Z">
+<meta property="og:updated_time" content="2020-06-01T08:15:37.491Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Lucid Dreams" type="application/atom+xml">
@@ -246,18 +246,20 @@
 <li>PID:进程ID数</li>
 <li>TTY:控制该进程的用户终端号</li>
 <li>TIME:用户进程已经运行的时间（以秒计）</li>
-<li>COMMAND:命令名<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ps</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">PID      TTY      TIME      COMMAND</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">24059    tty11    0:02      sh</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">24259    tty11    0:02      ps</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">_</span></span></pre></td></tr></table></figure>
-
-
-
-</li>
+<li>COMMAND:命令名<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ps</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">PID      TTY      TIME      COMMAND</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">24059    tty11    0:02      sh</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">24259    tty11    0:02      ps</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">_</span></span></pre></td></tr></table></figure></li>
 </ul>
 </li>
+<li><strong>分离输出：tee命令</strong><br>  有时,用户可能既想从屏幕上看到一个程序的输出,又想将该输出存到硬盘上以备日后参考,或者希望得到一个打印件。用户可能通过如下操作来实现这样的目的:首先运行命令并从屏幕上观看输出,然后使用重定向符将输出结果存到一个文件或送往打印机。<br>  同样,用户可以使用tee命令来在更短时间内,通过更少的键入来获得相同的结果。tee命令通常与管道操作符一同使用。例如,当用户键入sort phone.list | tee phone.sort并按回车键时,管道操作符将sort命令的输出(被排序的phone.list文件)送给tee。接着, tee将其显示在终端,同时存往指定的文件phone.sort中。<br>  当运行交互程序时,如果希望抓取用户/程序的对话, tee命令是一个必不可少的系统工具。  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ls -C | tee dir.list[<span class="built_in">return</span>]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">memos myfirst REPORT</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">cat dir.list[<span class="built_in">return</span>]</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">memos myfirst REPORT</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">_</span></span></pre></td></tr></table></figure>
+  ls -C 命令的输出被通过管道送往tee。tee命令将它的输入显示在屏幕上，同时存到文件dir.list中。<br>  <font color=red>tee命令的两个选项：</font><br>  <strong><em>-a 将输出追加到一个文件中,不覆盖原有内容<br>  -i 忽略中断,不响应中断信号</em></strong><br>  如果希望查看当前登录到系统的用户,并将结果存到文件dir.list中,键入who | tee-a dir. list然后按回车键。如果dir.list已存在,则who命令的输出被追加到dir.list文件的末尾。如果该文件不存在则创建它。</li>
 </ul>
 </li>
 </ul>
 <hr>
-<h1 id="Chapter-10-11-12-13"><a href="#Chapter-10-11-12-13" class="headerlink" title="Chapter 10-11-12-13"></a>Chapter 10-11-12-13</h1>
+<h1 id="Chapter-10-11-12-13"><a href="#Chapter-10-11-12-13" class="headerlink" title="Chapter 10-11-12-13"></a>Chapter 10-11-12-13</h1><ul>
+<li><strong>shell编程</strong> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">cat myfile</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">/usr/bin/sh</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">date</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">./myfile</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">2020年06月 1日 16:15:12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">_</span></span></pre></td></tr></table></figure>
+</li>
+</ul>
+
       
 
       
