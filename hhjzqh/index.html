@@ -9,50 +9,61 @@
 			src: url('digital-7_mono.ttf') format("truetype");
 		}
 	</style>
-	<link href="zqh/default.css" type="text/css" rel="stylesheet">
+	<link href="zqh/default_dev.css" type="text/css" rel="stylesheet">
 	<script type="text/javascript" src="hhj/jquery.js"></script>
 	<script type="text/javascript" src="hhj/garden.js"></script>
-    <script type="text/javascript" src="hhj/functions.js"></script>
+	<script type="text/javascript" src="hhj/functions.js"></script>
+	<script type="text/javascript" src="hhj/jquery.min2.js"></script>
+	
 </head>
 
 <body>
 <audio autoplay="autopaly">
   <source src="music.mp3" type="audio/mp3" />
 </audio>
+
+
 	<div id="mainDiv">
+		<div id="slideshow">
+			<!-- 插入轮播的图片们 -->
+			 <!-- <img class="active" src="bg.jpg" />-->
+			  <img class="" src="图片1.jpg" />
+			  <img src="图片2.jpg" />
+		</div>
 		<div id="content">
 			<div id="code">
-				<span class="comments">。。。。。。</span><br />
-				<span class="space"/><span class="comments">。。。。。。</span><br />
-				<span class="space"/><span class="comments">。。。。。。</span><br />
-				<span class="space"/><span class="comments">。。。。。。</span><br />
-				<span class="space"/>。。。。。。<br />
-				<span class="space"/>。。。。。。<br />
-				<span class="space"/>。。。。。。。。。。。。<br />
-				<span class="space"/>。。。。。。<br />
-				<span class="space"/>。。。。。。。。。。。。<br />
-				<span class="space"/>。。。。。。。。。。。。<br />
-				<span class="space"/>。。。。。。。。。。。。<br />
-				<span class="space"/>。。。。。。。。。。。。<br />
-				<span class="space"/>。。。。。。。。。。。。<br />
-				<span class="space"/>。。。。。。。。。。。。。<br />
-				<span class="keyword">。。。。。。<br />
-				<span class="space"/>。。。。。。。。。。。。<br />
-				<span class="space"/>。。。。。。。。。。。。<br />
-				<span class="space"/>。。。。。。。。。。。。<br />
-				<span class="space"/>。。。。。。<br />。。。。。。</span> <br />
+				<span class="comments">你好呀宝贝猪猪</span><br />
+				<span class="space"/><span class="comments">我们已经在一起-1周年啦</span><br />
+				<span class="space"/><span class="comments">回想一下这一年</span><br />
+				<span class="space"/><span class="comments">吵了无数的架，经历了N个磨合</span><br />
+				<span class="space"/>你也来了好几次成都找我<br />
+				<span class="space"/>每天都对你心怀期待<br />
+				<span class="space"/>想带你去看海洋馆<br />
+				<span class="space"/>想带你去看大熊猫。<br />
+				<span class="space"/>想和你吃好多趟火锅好多趟烤肉<br />
+				<span class="space"/>想陪你睡好多次觉<br />
+				<span class="space"/>你说的话真的有把我感动到<br />
+				<span class="space"/>“我来成都不是来吃喝玩乐的”<br />
+				<span class="space"/>“只要陪着你就行那也不用去”<br />
+				<span class="space"/>原话大概是这个意思吧，反正<br />
+				<span class="space"/>听了就很感动！<br />
+				<span class="space"/>希望我们过了新的一年<br />
+				<span class="space">多些谅解，少些误解<br />
+				<span class="keyword"/>我知道我们都很相爱<br />
+				<span class="space"/>所以我们积极的一起走下去吧。<br />
+				<span class="space"/>爱你<br />
 				<br />
 			</div>
 			<div id="loveHeart">
 				<canvas id="garden"></canvas>
 				<div id="words">
 					<div id="messages">
-						。。。。。。
+						hhj & zqh 相爱已经
 						<div id="elapseClock"></div>
 					</div>
 					<div id="loveu">
-						。。。。。。<br/>
-						<div class="signature">。。。。。。</div>
+						-爱你的hhj<br/>
+						<div class="signature">2021-4-22-23:34</div>
 					</div>
 				</div>
 			</div>
@@ -91,6 +102,42 @@
 			adjustCodePosition();
 			$("#code").typewriter();
 		}
+	</script>
+	<script>
+		//---------主角：轮播图函数-------------
+		function slideshow() {
+		  var slideshow=document.getElementById("slideshow"),
+		  imgs=slideshow.getElementsByTagName("img"), //得到图片们
+		
+		  current=0; //current为当前活跃的图片编号
+		
+		  function slideOff() {
+			imgs[current].className=""; //图片淡出
+		
+		  }
+		  function slideOn() {
+			imgs[current].className="active"; //图片淡入
+		
+		  }
+		
+		  function changeSlide() { //切换图片的函数
+			slideOn();
+			current++; //自增1
+			if(current>=imgs.length) current=0;
+			slideOff();
+		  }
+		
+		  //每2s调用changeSlide函数进行图片轮播
+		  var slideon=setInterval(changeSlide,2000);
+		
+		//  slideshow.onmouseover=function () {
+		//    clearInterval(slideon); //当鼠标移入时清除轮播事件
+		//  }
+		//  slideshow.onmouseout=function () {
+		//    slideon=setInterval(changeSlide,1500); //当鼠标移出时重新开始轮播事件
+		//  }
+		}
+		slideshow();
 	</script>
 </body>
 </html>

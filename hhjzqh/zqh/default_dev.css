@@ -114,3 +114,28 @@ body {
 #copyright a{
 	color:#666;
 }
+#slideshow{
+	/* width: 300px;  
+	height: 170px; */
+	/* 
+	margin:  0 auto;
+	overflow: hidden;
+	position: relative;   
+	*/
+	display: table-cell;
+	  vertical-align: middle;
+	  text-align: center;
+	/* border:1px solid #000; */
+  }
+#slideshow img{
+	width: 300px;
+	height: 220px;
+	position: absolute; /*图片采取绝对定位，均位于左上角，重叠在一起 */
+	 top: 400px;
+	left: 420px; 
+	opacity: 0; /*初始不透明度为0，图片都看不见*/
+	transition: opacity 1s linear; /*--重点--定义一个关于透明度的transition*/
+}
+#slideshow img.active{
+	opacity: 1; /*有active类的图片不透明度为1，即显示图片*/
+}
